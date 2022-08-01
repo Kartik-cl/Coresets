@@ -1,0 +1,28 @@
+{
+    "experiment_name":"heritageOrig",
+    "num_classes":5,
+    "generate_coreset": true,
+    "model_arch":"inception",
+    "data_dir":{
+        "train":"/workspace/coreset/dataset/heritage/dataset/output/train",
+        "val": "/workspace/coreset/dataset/heritage/dataset/output/val",
+	"test" : "/workspace/coreset/dataset/heritage/dataset/output/test"
+    },
+    "train_params": {
+        "learning_rate": 0.0001,
+        "batch_size": 64,
+        "epochs": 5,
+        "early_stopping": true,
+        "saved_model_path":"/workspace/coreset/saved_models/heritage"
+    },
+    "coreset_params":{
+        "method": "cosine",
+        "embeddings_path": "/workspace/coreset/utils/heritage_train_temp/embedding.npy",
+        "img_name_list_path": "/workspace/coreset/utils/heritage_train_temp/image_names.npy",
+        "label_map_path" : "/workspace/coreset/utils/heritage_train_temp/label_map.npy",
+        "cosine_sim_threshold": 0.87,
+        "lsh_bucket_density": 0.96,
+        "labels" : ["bell_tower","column", "dome(outer)", "gargoyle" ,"vault"],
+        "dest_folder": "/workspace/coreset/coreset_samples/heritage_train_temp"
+    }
+}

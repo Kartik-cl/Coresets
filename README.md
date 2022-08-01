@@ -1,2 +1,1 @@
-# Coresets
- Ongoing research on coresets
+# coreset
